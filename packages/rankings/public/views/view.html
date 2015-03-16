@@ -1,0 +1,14 @@
+<section data-ng-controller="RankingsController" data-ng-init="findOne()">
+  <span>{{ranking.created | date:'medium'}}</span> /
+  <span>{{ranking.user.name}}</span>
+  <h2>{{ranking.title}}</h2>
+  <div data-ng-if="hasAuthorization(ranking)">
+    <a class="btn" href="/#!/rankings/{{ranking._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn" data-ng-click="remove(ranking);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div>{{ranking.items}}</div>
+</section>

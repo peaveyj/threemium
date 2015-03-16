@@ -1,0 +1,31 @@
+<section data-ng-controller="RankingsController">
+  <form name="rankingForm" class="form-horizontal col-md-6" role="form" data-ng-submit="create(rankingForm.$valid)" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && rankingForm.title.$invalid }">
+      <label mean-token="'create-title'" class="col-md-3 control-label">Title</label>
+      <div class="col-md-9">
+        <input name="title" type="text" class="form-control" data-ng-model="title" id="title" placeholder="Title" required>
+        <div ng-show="submitted && rankingForm.title.$invalid" class="help-block">
+          <p ng-show="rankingForm.title.$error.required">Title is required</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && rankingForm.content.$invalid }">
+      <label mean-token="'create-content'" for="content" class="col-md-3 control-label">Content</label>
+      <div class="col-md-9">
+        <input type="text" name="items" data-ng-model="items[0]" id="items-0"></input>
+        <input type="text" name="items" data-ng-model="items[1]" id="items-1"></input>
+        <input type="text" name="items" data-ng-model="items[2]" id="items-2"></input>
+
+        <div ng-show="submitted && rankingForm.content.$invalid" class="help-block">
+          <p ng-show="rankingForm.content.$error.required">Content is required</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <button mean-token="'create-submit'" type="submit" class="btn btn-info">Submit</button>
+      </div>
+    </div>
+  </form>
+</section>
